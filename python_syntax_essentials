@@ -1,0 +1,1320 @@
+################
+# loop
+################
+
+# for loop start from 0 to 9 
+for i in range (0,10):
+	print (i)
+
+# for loop start from 0 and add 2 each time the result (0,2,4,6,8)
+for i in range (0,10,2):
+	print (i)
+
+# while loop start from 0 to 4
+i = 0 
+while i < 5:
+	print (i)
+	i+=1
+	
+################
+# condition 
+################
+
+# 22 % 3 = 1 because 22/3 = 21 R = 1
+#this loop and condition will print 0,11,-8,3,14
+for i in range (0,5):
+    if i % 3 == 0:
+        print (i)
+    elif i % 3 == 1:
+        print(i+10)
+    else: 
+        print(i-10)
+		
+################
+# the difference between return and print 
+################
+
+#retrurn will return the absolute value of val
+
+ def my_abs(val):
+	if val < 0:
+		return 0-val
+    	return val
+# print just print the value without and operation, so it will not return the absolute value
+ def my_abs(val):
+	if val < 0:
+		print(0-val) #parentheses for print required in Python 3
+	else:
+		print(val)
+		
+################
+# String Function
+################
+
+h = "huda"
+s = "Saleh"
+space = "    xdsee"
+j = "aziz saleh, huda   mohammed "
+print (s.lower())
+print (h.upper())
+print (space.strip())
+print(h*2)
+print (s+h)
+print (space.strip('e'))  # to remove any character that we select, will remove the charahterrs if they only are in the beging or at the end 
+print (j.split())	# ['aziz', 'saleh,', 'huda', 'mohammed']
+
+################
+# sub string
+################
+
+x= 'hello'
+print (x[1:4])	# hello index start from 0 to 4, when we use [] this the first number will be included but the second not 
+				# the result will be ell
+				# there is another index for hello start from -5 and ent to -1 
+print('hee' in x )	# the result will be false because hee is not exist in hello
+print('he' in x )	# the resulrt will be true 
+print(x.find('hw'))	# will return -1 if not exist 
+print(x.find('h'))	# will return the number of index that has first match which is 0 
+print(x.find('ell'))# will return the number of index that has first match which is 1 
+# to examine if the word contain our value or not 
+x = 'hello'
+if ('hee' in x ) == True:
+    print ("good")
+else:
+    print ("fuck")
+
+################
+# convert Number
+################
+x = "12345"
+int(x)	#the value will be 1234 temperorarry value 
+float (x)	#the value will be 1234.0
+# permanent covert will be as follow:
+x = '6'
+x= float(x) # we need to assign x again
+x= x+6
+print (x)
+
+################
+# String format
+################
+statment = "Saleh Loves Heedo {} {}" 
+print (statment.format("sooo"," muchh"))	#resullt will be Saleh Loves Heedo sooo  muchh.
+statment = "Saleh Loves Heedo {2} {1} {0}" 
+print (statment.format("loooves"," muchh"," sooo"))	#resullt will be Saleh Loves Heedo sooo  muchh  loooves
+
+################
+# List
+################
+
+# create a list 
+x = [13,50,11]
+# print a selected element 
+print (x[2])	#will print 11
+# print all list in loop 
+x = [13,50,11]
+for i in x:
+    print (i)
+# or 
+for i in range (0,len(x)):
+	print (x[i])
+#To change list value
+x[1]=40
+#To add new element to the list 
+x.append(70)
+print (x)	#The result will be [13, 50, 11, 70]
+# To remove an element by index location 
+x.pop(3)
+print (x)	#The result will be [13, 50, 11,] 70 will be removed
+# To remove an element by its value 
+x.remove(13) 
+print (x)	#The result will be [50, 11,] 13 will be removed
+# Add to listes to each other 
+x1=[5,6,9,0]
+x2=[55,66,77,8]
+x1.extend(x2)
+print (x1)	# the result will be [5, 6, 9, 0, 55, 66, 77, 8]
+# To work through two listes in the same time 
+for a,b in zip (x1,x2):
+	print (a,","b)
+	# the resulrt will be 5 , 55
+						# 6 , 66
+						# 9 , 77
+						# 0 , 8
+
+################
+# Tuple (tuple cant be chaned)
+################
+
+# create tuple
+x =   ("sale", "abdulaziz", 'saleh')
+print(x)	# Print ('sale', 'abdulaziz', 'saleh')
+print(x[1])	# print abdulaziz
+# print in loop
+x = ("sale", "abdulaziz", 'saleh')
+for i in x:
+    print (i) 
+# or 
+x = ("sale", "abdulaziz", 'saleh')
+for i in range (0, len(x)):
+    print (x[i]) 
+
+################
+# Dictionary Basics
+################
+
+# create dictionary
+x = {('saleh',2017):10.10} 
+print (x)  # the result will be {('saleh', 2017): 10.1}
+x = {('saleh',2017): 10 , ('saleh',2000):5 }
+x = {('saleh',2017): 10 , ('saleh',2000):5 , ('aaleh',2005,10): 77 }
+print (x)	the result will be {('saleh', 2017): 10, ('aaleh', 2005, 10): 77, ('saleh', 2000): 5}
+
+#search for a value by the key 
+print(x[('saleh', 2000)])	# the result will be 5
+# search for a key withut getting an eror if not exist 
+w = x.get(('saleh', 20167))
+print (w) #the resulr will be none
+# find the lenghtof dictionary
+len(x)
+# add a dictionary 
+x [('car',59)] = 22
+# check if the key is exist in the dictionay or not, the return value will be eather true or false
+print ( ('saleh', 20217) in x)
+
+# to remove dictionay by range 
+x = {('1',2017): 100 , ('3',2000): 300 , ('2',2005,10): 200 }
+
+x [('4',1995)] = 400
+
+to_remove =[]
+for i in x:
+    if (i[1]> 2000):
+        to_remove.append(i)
+for i in to_remove:
+    x.pop(i)
+print(x)
+# to remove a dictionary and get the value back if needed 
+print (x.pop(('1', 2017)))
+# to remove without getting back the value 
+del x[('1', 2017)]
+# to print just values
+for i in x:
+    print(x[i]) 
+# to print just Key
+for i in x:
+    print(i)
+# to Print both key an value
+for k, v in x.items():
+    print(k,':',v)
+
+################
+# List and Dictionary Comprehension
+################
+
+#create a list consist of squared   from 1 to 10
+x = [i**2 for i in range(0,11)]
+print (x)
+#create a list consist of numbers from 0 to 5
+x = [i for i in range(0,6)]
+print (x)
+#create a list consist of even number from 0 to 20
+x = [i for i in range(0,21,2)]
+print (x)
+#create a list consist of 0 and 1 and has 9 items 
+x = [i%2 for i in range(0,10)]
+print (x)
+#create a list consist of randdom namers between 0 and 10 and the length of list = 21
+import random
+x= [random.randint(0,11) for i in range(0,21)]
+print (x) 
+#create a dictionary consist of squared numbers from 1 to 10 and key value from 1 to 10
+x = {i: i**2 for i in range (1,11)}
+print (x)
+# List and dictionary letters A-Z
+x = {i: chr(i) for i in range (65,91)}
+print (x)
+y = [chr(i) for i in range (65,91)]
+print (y)
+
+################
+# Set (just unique elemets)
+################
+
+# create a set 
+x = set ([1,2,3,3,4])
+print (x)	# the result will be {1, 2, 3, 4}
+# operation union
+x = set ([1,2,3,3,4])
+y = set ([1,6,])
+print (y.union(x))	# the result will be {1, 2, 3, 4, 6}
+# operation intersection
+x = set ([1,2,3,3,4])
+y = set ([1,6,])
+print (y.intersection(x))	# the result will be {1}
+# add element
+x.add(99)
+# remove 'but if the element is not exist an error will throw' 
+x.remove(1)
+# remove 
+x.discard(99)
+
+################
+# numpy Array
+################
+
+import numpy as nb  # import the package
+# Rank 1 Array 
+s = nb.array([55,2,3]) # create numpy
+print(s) # print
+print(type(s)) # retrieve the type and it will be <class 'numpy.ndarray'>
+print(s.shape) # retrieve the shape and i will be (3,)
+print(s[0]) # print by index and it will print 55
+s[0]= 22 # update the current value by the index 
+# note numarry accept only one data type it cannt be mixed 
+
+# Rank 2 Array
+ss = nb.array([[3,4,5],[33,44,55]])
+print (ss) 
+
+# Rank 2 Array 
+
+import numpy as nb
+ss = nb.array([[3,4,5],[33,44,55]]) # create rank 2 an array
+#print (ss) 
+print(ss[1]) # this will  print  [33 44 55]
+# print specific value  [row,column ]
+print (ss[1,1]) # this will print 44
+# some function 
+x= nb.zeros((4,3)) # all zeros
+print(x)
+z= nb.ones((2,4)) # all ones
+print (z)
+y= nb.full((2,2),7.0) # we chose which number or character will be filled 
+print (y)
+r = nb.random.random((2,3)) # generate random numbers between 0 and 1 
+print(r)
+m= nb.eye(1,2) # matrix 0 and 1  
+print(m)
+print(m.shape) # even if it seams that we have 1 rank array, the shape still (1,2) and when we want to access we must consider it as rank 2 array
+
+################
+# Slice Array
+################
+
+import numpy as nb
+an_array = nb.array ([[11,12,13,14],[21,22,23,24],[31,3,33,34]])
+print(an_array)
+print('---------')
+a_slice = an_array[:2,1:3] # to get sub array consisting of the first 2 tows (0 and 1) & 2 column2 (1 and 2)  
+# we take all values that located in the left of :
+# when we have just : like (:,2:4) this mean all rows and column (2 and 3)
+print(a_slice)
+print('---------')
+a_slice[0,0]= 55 # when we change any value in a slice the value will change in the original array. 
+print(an_array)
+print(a_slice)
+print('---------')
+new_sub_array = nb.array(an_array[:2,1:3])# To create new separate sub array  
+# when we change on this one, the original array will not change
+print(new_sub_array)
+
+################
+# Indexing Slice Array
+################
+
+# Rank 1 slice indexing 
+row_rank1 = an_array[2] # == row_rank1 = an_array[2,:]
+row_rank1s = an_array[2,:] # == row_rank1 = an_array[2]
+print (row_rank1) 
+print (row_rank1s) 
+print(row_rank1.shape)
+
+# Rank 2 slice indexing 
+print(row_rank1s.shape)
+row_rank1 = an_array[1:3] 
+print (row_rank1) 
+print(row_rank1.shape)
+
+# Rank 1 slice indexing (column)
+column_rank1 = an_array[:,2] 
+print (column_rank1) 
+print(column_rank1.shape)
+
+# Rank 2 slice indexing (column)
+column_rank1 = an_array[:,1:2]  
+#row_rank1s = an_array[1:,:] 
+print (column_rank1) 
+#print (row_rank1s) 
+print(column_rank1.shape)
+
+################
+# create sub array from any value from an exsistance array (multi steps)
+################
+#1) create tow numarry one for row and one for column
+import numpy as nb
+an_array = nb.array ([[11,12,13,14],[21,22,23,24],[31,3,33,34],[41,42,43,44]])
+print(an_array)
+
+col_index = nb.array([1,2,3,0]) # create an new numpy rank 1 (1 row and 4 columns) 
+print('\n column indices picked ',col_index)
+
+row_index = nb.arange(4) # create  an new numpy using arange function 
+print('\n column indices picked ',row_index)
+
+for r,c in zip (row_index, col_index): # just to explain what will happen  when we run this print(an_array[row_index,col_index])
+    print(r,',', c)
+# 2) print or create sub array from the exsistance array 
+print(an_array[row_index,col_index]) # print or create  sub_numpy rank 1  using specific index 
+sub_array= an_array[[row_index,col_index], [col_index,row_index] ]# create sub_numpy rank2 using specific index 
+print ('yes','\n',sub_array)
+
+# we can also do the same by using a list or a tuple
+# tuple
+c = (1,2,3)
+r = (0,2,3)
+n_array = an_array[c,r]
+print('last',n_array)
+print(n_array.shape)
+# List
+c = [1,2,3]
+r = (0,2,3)
+n_array = an_array[c,r]
+print('last',n_array)
+print(n_array.shape)
+
+# Add any value in any value on array by indinxing 
+an_array [row_index,col_index] +=1000  # add 1000 specific index in numpy
+print (an_array)
+
+################
+# Filter on array 
+################
+
+import numpy as nb
+an_array = nb.array ([[11,12,13,14],[21,22,23,24],[31,3,33,34],[41,42,43,44]])
+f = (an_array < 25 )
+
+print(f)
+print(an_array[f])
+print(an_array[an_array < 25]) # best 
+print(an_array [an_array % 2==0] +100)
+s = an_array [an_array % 2==0] +100
+print(s)
+
+j= an_array[(an_array == 21) | (an_array <20)]
+print(j)
+
+################
+# assign data type and do some operations 
+################
+
+
+import numpy as nb
+
+x = nb.array([[1,2],[6,7]])
+# to show the current data type 
+print(x.dtype)# int32
+# change the data type from string to float 
+y = nb.array ([['1','2'],[6.6,7.7]], dtype = nb.float32) 
+print(y.dtype)# float32
+# ADD
+#1)
+z=x+y
+print(z.dtype) # float64
+print('\n',z)
+#2) 
+print(nb.add(x,y))
+
+#  SUBSTRACT 
+#1)
+print(y-x)
+print(nb.subtract(x,y))
+
+# Multiply
+#1)
+print(x * y)
+#2)
+print(nb.multiply(x,y))
+# DIVIDE
+#1)
+print(y/x)
+#2)
+print(nb.divide(y,x))
+
+# Sqrt
+print(nb.sqrt(x))
+
+#exponent 
+print(nb.exp(y))
+
+# correlation 
+np.corrcoef(stage1['Value'],stage2['Value'])
+
+################
+# Statistical Methods, Sorting, andSet Operations:
+################
+
+import numpy as nb
+
+x = 1+ nb.random.rand(2,5) # create random array  # or nb.random.random((2,3)) دبلنا الاقواس 
+print(x)
+print('\n',x.mean()) # to compute overall mean 
+print('\n',x.mean(axis= 1)) # compute the means by row
+print('\n',x.mean(axis= 0)) # compute the means by column
+
+y = nb.random.rand(2,2)
+print(y)
+print('\n',y.sum()) # sum all the elements
+
+print(nb.median(x, axis=1))# compute the median by rows
+print(nb.median(x, axis=0))# compute the median by column
+# sorting 
+import numpy as nb
+
+x = 1+ nb.random.rand(2,9) # create random array
+x.sort() # to sort the an array 
+print(x)
+################ to sort a copy and also the orifinal 
+copy = np.array(st) # Take a copy and then sort it without tuching the original 
+copy.sort()
+print(copy)
+print(st)
+st.sort() # will sort the original
+print(st)
+#######
+# to print unique elemets in the array 
+print(np.unique(x))
+#########
+# Elements that exist in both arrays 
+print(np.intersect1d(o,o2))
+#all uniqe elements in both arrays 
+print(np.union1d(o,o2))
+#the elemnts that exist in first array onlay 
+print(np.setdiff1d(o2,o))
+################
+# Broadcasting
+################
+# to process any operation using broadcasting we must have at leaste one commen dimenttion 
+# to add two different size numpay by using T
+z = np.zeros((3,4))
+co= np.array([[1,2,3]])
+ro= np.array ([[1],[3],[4],[7]])
+j= z+ro.T
+print(j)
+## to add two different size numpay  
+z = np.zeros((4,3))
+co= np.array([[1,2,3]])
+ro= np.array ([[1],[3],[4],[7]])
+j= z+ro
+print(j)
+##
+z = np.zeros((5,6))
+ro= np.array ([[3]])
+j= z+ro
+print(j)
+################
+# Photos
+################
+from scipy import misc
+import matplotlib.pyplot as plt
+
+photo_data = misc.imread('./wifire/sd-3layers.jpg') # read photo from the file
+
+plt.figure(figsize=(5,5))# frame size
+plt.imshow(photo_data) # add photo to plt
+plt.show() # to printout the photo
+print(photo_data.shape) # gives the dimension and number of layers (RGB)
+print(photo_data.size) # print the total of all elements oe numbers in the arrary
+print(photo_data)# print all photo numpy array
+print("Max ",photo_data.max(),"\n Min", photo_data.min(),"\nMean",photo_data.mean())
+print(photo_data[2500,3800])
+# to change a value by spicifi picceal and layer
+photo_data[500,600,1]= 255
+# to change by range 
+photo_data[100:500,1000:1500,0:3]= 255
+#### after doing any update we need to reassign plt.imshow 
+plt.figure(figsize=(5,5))
+plt.imshow(photo_data)
+plt.show()
+### chose a range of image and change its colors or values
+plt.imshow(photo_data)
+plt.show()
+cop = photo_data
+filter_low = photo_data < 50
+cop[filter_low] = 255
+plt.figure(figsize= (5,5))
+plt.imshow(cop)
+plt.show()
+
+################
+# Circle
+################
+
+1
+from scipy import misc
+import matplotlib.pyplot as plt
+import numpy as np
+
+photo_data = misc.imread('./wifire/sd-3layers.jpg') # read photo from the file
+
+plt.figure(figsize=(5,5))# frame size
+plt.imshow(photo_data) # add photo to plt
+plt.show()
+
+rows, col, lay = photo_data.shape
+print('rows',rows,'\n colum',col,'\n layer', lay)
+
+
+x,y = np.ogrid[:rows,:col] # create two separet numpy's arraies[[0,row]]
+print('\nx=',x.shape)
+print('\ny=',y.shape)
+print('\n',rows)
+center_rows, center_col = rows/2, col/2 # calculate tha halve distance of row and col
+print('\n row center ',center_rows,'\n col center',center_col)
+distance_from_circumference = (x - center_rows)**2 +(y-center_col)**2
+radius = (center_rows)**2
+print('\n x')
+print(x)
+print('\n x-center')
+print(x-center_rows)
+tr = distance_from_circumference > radius
+print(tr[2000:2200,1500:2000])
+plt.figure(figsize=(15,15))# frame size
+photo_data [tr]=255
+plt.imshow(photo_data) # add photo to plt
+plt.show()
+
+print((4)**2)
+################
+# My Note if the arry (3,4,2) e cand index another one if is is the same or (3,4)
+################
+
+bb= np.array ([[[1,2,3],[4,5,6],[7,8,9],[1,2,3],[4,5,6],[7,8,9]],[[11,22,33],[1,2,3],[4,5,6],[7,8,9],[44,55,66],[77,88,99]],[[111,222,333],[444,555,666],[1,2,3],[4,5,6],[7,8,9],[777,888,999]],[[111,222,333],[1,2,3],[4,5,6],[7,8,9],[444,555,666],[777,888,999]]])
+ff= np.array ([[True,True,False,False,True,False],[True,True,False,False,True,False],[True,True,False,False,True,False],[True,True,False,False,True,False]])
+bb[ff]=0
+print(bb)
+print(bb.shape)
+print(ff.shape)
+
+################ 
+# np.ogrid (My note)
+################
+
+bb= np.array ([[[1,2,3],[4,5,6],[7,8,9],[1,2,3],[4,5,6],[7,8,9]],[[11,22,33],[1,2,3],[4,5,6],[7,8,9],[44,55,66],[77,88,99]],[[111,222,333],[444,555,666],[1,2,3],[4,5,6],[7,8,9],[777,888,999]],[[111,222,333],[1,2,3],[4,5,6],[7,8,9],[444,555,666],[777,888,999]]])
+
+row,col,d = bb.shape
+print('\ row',row)
+print('\ col',col)
+print('\ a',d)
+print('------------')
+cc,kk,ss= np.ogrid[:row,:col,:d] # بالترتيب 
+# bb Shape = (4, 6, 3)
+print(cc.shape) # (4, 1, 1)
+print(kk.shape) #(1, 6, 1)
+print(ss.shape) # (1, 1, 3)
+
+print(cc)
+
+
+################ 
+# square 'semiller to circle'
+################
+from scipy import misc
+import matplotlib.pyplot as plt
+import numpy as np
+
+photo_data = misc.imread('./wifire/sd-3layers.jpg') # read photo from the file
+
+plt.figure(figsize=(5,5))# frame size
+plt.imshow(photo_data) # add photo to plt
+plt.show()
+
+rows, col, lay = photo_data.shape
+print('rows',rows,'\n colum',col,'\n layer', lay)
+
+
+x,y = np.ogrid[:rows,:col] # create two separet numpy's arraies[[0,row]]
+center_rows, center_col = rows/2, col/2 # calculate tha halve distance of row and col
+print('\n row center ',center_rows,'\n col center',center_col)
+print('\n X Shape', x.shape)
+
+print('\n Y',y.shape)
+distance_from_circumference = (x - center_rows) +(y-center_col)**2
+radius = (center_rows)**2
+tr = distance_from_circumference < radius
+plt.figure(figsize=(5,5))# frame size
+photo_data [tr]=255
+plt.imshow(photo_data) # add photo to plt
+print('\ntr',tr)
+print('\n-------------',tr.shape)
+print('\n-------------',distance_from_circumference.shape)
+plt.show()
+print('\ntr',distance_from_circumference)
+
+################ 
+# rectangle 'seliller to square and circle'
+################
+from scipy import misc
+import matplotlib.pyplot as plt
+import numpy as np
+
+photo_data = misc.imread('./wifire/sd-3layers.jpg') # read photo from the file
+
+plt.figure(figsize=(5,5))# frame size
+plt.imshow(photo_data) # add photo to plt
+plt.show()
+
+rows, col, lay = photo_data.shape
+print('rows',rows,'\n colum',col,'\n layer', lay)
+
+
+x,y = np.ogrid[:rows,:col] # create two separet numpy's arraies[[0,row]]
+center_rows, center_col = rows/2, col/2 # calculate tha halve distance of row and col
+print('\n row center ',center_rows,'\n col center',center_col)
+print('\n X Shape', x.shape)
+
+print('\n Y',y.shape)
+distance_from_circumference = (x - center_rows) +((y-center_col)**2)*2
+radius = (center_rows)**2
+tr = distance_from_circumference < radius
+plt.figure(figsize=(5,5))# frame size
+photo_data [tr]=255
+plt.imshow(photo_data) # add photo to plt
+print('\ntr',tr)
+print('\n-------------',tr.shape)
+print('\n-------------',distance_from_circumference.shape)
+plt.show()
+print('\ntr',distance_from_circumference)
+################ 
+# combinde two filters 
+################
+
+tr2= distance_from_circumference2 > radius2
+print(x-center_rows)
+tr = distance_from_circumference > radius
+final= np.logical_and(tr,tr2)
+plt.figure(figsize=(7,7))# frame size
+photo_data [final]=255
+plt.imshow(photo_data) # add photo to plt
+plt.show()
+
+################ 
+# Pandas Series
+################
+import pandas as pd
+# to create Panda Series (data type could be d)
+pand= pd.Series(data=[1,2,3,"s",1], index= [111,'ss','ss','hu','sh'])
+# or
+pans= pd.Series([1,2,3,4,1], ['sa','ss','ss','hu','sh'])
+print(pand)
+# to print index
+print(pand.index)
+# to access to data using index value
+#one
+print(pand['hu'])
+#or
+print(pand.loc['hu'])
+# more than one
+print(pand[['sh','hu']])
+#or
+print(pand.loc[['sh','hu']])
+#Access by index location but this will return both index and data
+print(pand[[2,0]])
+#or
+print(pand.iloc[[4,0]])
+# to check if an index is exist and i will return true or false
+print(111 in pand)
+print(2 in pand)
+# we can apply python operation on a data
+# However, Python does not allow to do wrong operation with a string such as "S"**2 or 'ss'+2
+#so we should be aweare if there is an object in data. If all data are number it will be ok
+print(pand*2 )
+
+################
+# Pandas DataFrame
+################
+
+import pandas as pd
+
+# create 2 Series to add them in data frame 
+f = {"1" :pd.Series([1,2,3,4],['s','h','j','f']),
+     "2" : pd.Series ([5,6,7,8],['s','2h','2j','2f'])}
+# Print the tow data frames 
+print(f)
+# Add the tow data frame into a data frame 
+#data frame consider an indexes as a primary key and the first row as a header
+df= pd.DataFrame(f)
+print(df)
+# to print columns
+print(df.columns)
+# to copy part of another data frame
+ss=pd.DataFrame(f,index= ['s','h'])
+
+###
+name = ['saleh','Huda','Husah','Abdulaziz']
+f = {"grad" :pd.Series([100,99,98,97],name),
+     "Age" : pd.Series ([28,23,56,62],['s','h','hh','a'])}
+df= pd.DataFrame(f)
+# to pick up a spisific index and columns when the columns not exist it will be created
+ss=pd.DataFrame(f,index= ['saleh','Huda'], columns=['balance ','Age','grad'])
+
+# creat DataFrame from python dictionary (dic in List)
+d = [{('coulmn1'): 1,},{'column2': 2},{'column3': 2},{'column2': 5}]
+print(pd.DataFrame(d))
+# eatch dictonary create on row, when we have same columns name in the same dic the last one will just be considered 
+d = [{'coulmn1':0 ,'coulmn2': 1,'column3': 2,'column4': 2,'coulmn1': 5},{'dd':55}]
+id=pd.DataFrame (d,index=('Red','wite'))
+print(id)
+# to chose columns and create if uniqe
+qs= pd.DataFrame(d,columns=('column3','xx'))
+# To add ne column with operation 
+f = {"grad" :pd.Series([100,99,98,97],name),
+     "Age" : pd.Series ([28,23,56,62],['Saleh','Abdulaziz','Huda','Husah'])
+df= pd.DataFrame(f)
+df['Avrage'] = df['grad'] * df['Age']
+print(df)
+# insert a new coulm and chose the location, name and values 
+df.insert(2,'new',df['Age'])
+print(df)
+#or insert a new coulm with aspisific range in any exist columns
+df['newnew'] = df['Age'][:1]
+# to delete with ability to save deleted value
+archive= df.pop('newnew')
+#or delet without asighn the value to other varible
+del df['new']
+print(df)
+# Rename DataFrame columns name 
+e.rename(columns={0: 'Saleh', 1: 's',2:'t',3:'y',4:'o',5:'ii',6:'jf',7:'oou',8:'trt',})
+
+################
+# Pandas read CSV
+################
+import pandas as pd
+# to read CSV
+movies = pd.read_csv('Demographic.csv', sep=',')
+# to select first row 
+row0 = movies.iloc[0]
+# to select a spicific rows 
+movies.loc[[12,0,5,4]]
+# to select first 5 rows 
+movies.head()
+# to select top X rows 
+movies.head(10)
+#check if the coulmn exist in a data set
+print('COUNT RECEIVES PUBLIC ASSISTANCE' in movies)
+#to printt index
+movies.index
+# to printt column 
+movies.columns
+################
+# Pandas: Descriptive Statistics
+################
+# general statistics 
+movies.describe()
+#general on a spicific column 
+movies['period'].describe()
+movies.min()
+movies.max()
+movies.mean()
+movies.corr()
+movies.mode()
+movies.std()
+# to change the values to be True or false 'boolian'
+ss= movies['period'] > 9999999
+# to check if any value in the filtter has true and return true if right 
+ss.any()
+# to check if any value in the filtter is true and return true if right 
+ss.all()
+# to check if all values in the filtter are true and return true if right 
+
+################
+# PandasCleaning Data
+################
+# replacment: to replace any value with new value  df.replace(current, new value)
+df.replace (10,1)
+# Fill empty cell: to fill values with same forwad values 
+df.fillna(method= 'ffill')
+# Fill empty cell: to fill values with same back values 
+df.fillna (method='backfill')
+# drop  fields with missing values
+# to drop row
+pd.dropna()
+#or 
+pd.dropna(axies=0)
+# to drop column
+pd.dropna(axies=1)
+# to interpolate an empty value by using linner polynomials 
+df.interpolate()
+# to check if the is any empity values if there is an empity value it will be True otherwise False
+print(movies.isnull().any())
+# to get null values with dataframe
+movies[movies.isnull().any(axis=1)]
+# when we apply any cleaning function we must re assighn data fraim agin 
+movies=movies.dropna()
+# To replace a value with another 
+movies= movies.replace('*',3)
+################
+# Pandas Visulization
+################
+import pandas as pd
+import matplotlib.pyplot as plt
+movies = pd.read_csv('demand.csv', sep=',')
+# to show liners chart all coulmns
+movies.plot(figsize = (5,5))
+# to choose chart style all coulmns
+movies.plot(kind= 'hist',figsize = (5,5)) # top 5 movies.head().plot(kind='hist',figsize = (5,5))
+plt.show()
+# to show box plot firt 10 rows 
+movies.head(10).boxplot(figsize = (5,5))
+plt.show()
+# to show histigram for a spisicif column 
+movies.head(10).hist(column= 'period',figsize = (5,5))
+plt.show()
+
+################
+# Frequent Data Operations
+################
+
+# this will return all values that meet the condition 
+ll = movies [movies['sales'] > 3]
+# This will retuen boolian values of the same coulmn
+ll = movies ['sales'] > 3
+# Insert new column with values
+movies['new_coulmn'] = movies ['sales'] **2
+# to add new row 
+movies.loc[99]= [23,34,56,77]
+# to drop row
+movies.drop(movies.index[[4]])
+# to delet coulmn
+del movies['sales']
+# aggregate with group by (collect semeler cell and make the aggregattion)
+movies.groupby('coulmn_name').mean()
+# slcicing dataFrame
+movies[100:1010]
+# to chose last 20 for example
+movies[-10:]
+# to count the number of each row in dataframe 
+count_sales= movies['sales'].value_counts()  # in differnt way gro= movies.groupby('region').count()
+# to filter data frame First create boolian filter then use the boolian to print full filtered data 
+filt= movies['period'] <=3
+final = movies[filt].head() #  final2 = movies[filt][:20] 
+# to search in text
+animation= movies['genres'].str.contains('Animation')
+movies[animation][5:10]
+# group by using mean and count 
+avrage rating= movies['title', 'rate'].groupby('title').mean()
+print(avragerating.tail()) # last 5 
+count= movies['title', 'rate'].groupby('title').count()
+################
+# Merging DataFrames
+################
+import pandas as pd
+# To stack DataFrame in top of each other with redundancy all coulmns even if they are the same. if they have different coulmns, this will result NaN values 
+pd.concat([left,right]) # to merge both data frames in one 
+#or 
+left.append(right)
+# the best solation to merge data frame to avoid redundancy and NaN
+pd.merge(left,right, how='inner')
+# Or the best 
+left.merge(right, on = 'ID', how ='inner')
+# To avoid the NaN issues we use inner join with th same function; however, this will cause redundancy in semeler columns
+ps.([left,right], axis= 1, join = 'inner')
+################
+# Combain aggregation, merging and filtter to get usful analytics 
+################
+# to return the avrage(Min, Max,..) value at any column
+avrage_rating =  movies.groupby('movies_ID',as_index= False).mean()
+# to make mmovie_ID the Index # reindex
+avrage_rating =  movies.groupby('movies_ID',as_index= True).mean()
+# to remove any unwanted column
+del avrage_rating ['user_ID']
+# to add filter 
+is_high_rating = movies['rating']>= 4
+print(movies[is_high_rating][-5:]) # [-5:] to print last 5 
+# to search in text  filtter
+is_comedy= movies['generes'].str.contains('commidy')
+# to return high rating and comedy movies using tow filters
+movies[is_comedy & is_high_rating][-10:]
+################
+# Pandas String methods
+################
+# to split values in different cells # True to make sure the output will be daataframe, but false will be a list
+movies['genre'].str.split('|', expand = True) # or ('anything') (',')('#')
+# to add new column and if the genre is comidy the records will return true in the new column
+movies['is_comedy'] = movies[genre].str.contains('comedy') 
+# to find a value the result will be True or False
+movies['Name'].str.contains(2)
+# Return first match found I need to understand regular Regular Expression Syntax 
+# to extract any values between parentheses 
+movies['year']= movies['title'].str.extract('.*\((.*)\).*', expand = True)
+# to convert unix date and add it to new column to regular date 
+dataf['Date']= pd.to_datetime(dataf['one'], unit='s')
+# to store dataframe
+movies.sort_values(by = 'time' , ascending= True)[:10]
+movies.sort_values(by = 'time' , ascending= False)[:10]
+# an example to visulize data with new featuers 
+dataf[['one','Date']].plot(x= 'one', y= 'Date', figsize= (5,5), grid = True)
+plt.show()
+################
+# Data visulization indicators (first part)
+################
+import pandas as pd
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+
+data = pd.read_csv('./Indicators.csv')
+print(data.shape)
+print(type(data))
+print(data.head(10))
+# to check how many countries do we have
+#number_of_country= data['CountryName'].unique() # to put them in numpy array
+number_of_country= data['CountryName'].unique().tolist() # to insert them is a real list
+
+# to validate the number of countries by country cods
+country_cod= data['CountryCode'].unique().tolist()
+
+# to check how many indicator
+N_indicators = data['IndicatorCode'].unique().tolist()
+
+# how many years do we have
+N_years = data['Year'].unique().tolist()
+
+# range
+max= data['Year'].max()
+min= data['Year'].min()
+print('\n','-1','\n',len(number_of_country))
+print('\n','-2','\n',len(country_cod))
+print('\n','-3','\n',len(N_indicators))
+print('\n','-4','\n',len(N_years))
+print('\n','-5','\n','between', min,' and ',max)
+
+################
+# Data visulization indicators (first part)
+################
+import pandas as pd
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+
+data = pd.read_csv('./Indicators.csv')
+
+
+mask1= data['IndicatorName'].str.contains('CO2 emissions \(metric')
+mask2= data['CountryCode'].str.contains('USA')
+mask3= data['Year'].isin([2011])
+stageusa= data[mask1 & mask2]
+stageall= data[mask1 & mask3]
+***************************************
+# bar chart by plot 
+#first) detrmin x and Y
+value= stageusa['Value'].values
+year = stageusa['Year'].values
+# assighn x and Y
+# to set up the size we must rigt it as first line
+plt.figure(figsize=(10,10))
+plt.bar(year,value)
+plt.grid(True) # to add lines
+plt.xlabel('Year') # to add label under X axis
+plt.ylabel(stageusa['IndicatorName'].iloc[0]) # to add label nextto Y axis by using dataframe cell
+plt.title ('USA Emission per Capita') # to add label above the shart as a title
+plt.show()
+***********************************
+# line chart plot 
+#first) detrmin x and Y
+value= stageusa['Value'].values
+year = stageusa['Year'].values
+# assighn x and Y
+plt.plot(year,value)
+plt.grid(True) # to add lines
+plt.xlabel('Year') # to add label under X axis
+plt.ylabel(stageusa['IndicatorName'].iloc[0]) # to add label nextto Y axis by using dataframe cell
+plt.title ('USA Emission per Capita') # to add label above the shart as a title
+# since the chart start from 16 which is misleading we need to set X and Y plt.axis([x starts, x ends,y starts, y ends])
+plt.axis([1959,2012,0,25]) # must be befor plt.show().
+plt.show()
+***********************************
+# Histogram chart
+# first histgram just recive one dimention and it shows how many times it happend
+# the second too detrmind the number of bine 
+value= stageusa['Value'].values
+plt.figure(figsize=(15,15))
+plt.hist(value,30,normed=False,facecolor='yellow')
+plt.grid(True)
+plt.show()
+***********للكتابه على الرسم البياني هناك اكثر من شكل واكثر من نوع ******
+https://matplotlib.org/examples/pylab_examples/annotation_demo2.html
+
+fig, ax = plt.subplots() # ثابت
+
+ax.annotate("USA",
+            xy=(stageusa[us]['Value'].mean(), 6), xycoords='data', # مكان السهم 
+            xytext=(stageusa[us]['Value'].mean(), 40), textcoords='data', # مكان التكست
+            arrowprops=dict(arrowstyle="fancy", # نوع السهم
+                            connectionstyle="arc3"), # الشكل
+            )
+
+plt.hist(stageall['Value'], 10, normed=False, facecolor='green')
+
+plt.xlabel(stageusa['IndicatorName'].iloc[0])
+plt.ylabel('# of Countries')
+plt.title('Histogram of CO2 Emissions Per Capita')
+
+#plt.axis([10, 22, 0, 14])
+plt.grid(True)
+
+plt.show()
+*****************
+# w can be any thing
+w,axis= plt.subplots()
+axis.yaxis.grid=(True)
+axis.set_title('CO2 emission vs GDP\(per capita\)', fontsize= 10)
+axis.set_xlabel(stage1['IndicatorName'].iloc[2])
+axis.set_ylabel(stage2['IndicatorName'].iloc[2])
+axis.scatter(stage1['Value'].values, stage2['Value'])
+plt.show()
+******************
+
+################
+# Data visulization Maps
+################
+
+import pandas as pd
+import folium
+from IPython.display import HTML
+
+data = pd.read_csv('Indicators.csv')
+print(data.head())
+
+# Maskes 
+
+m1 = data['IndicatorName'].str.contains('Electric power consumption \(kWh per ca')
+m2= data['Year'].isin([2011])
+stage= data[m1 &m2]
+stage.head()
+
+# Maps
+plot_data= stage[['CountryCode', 'Value']]
+
+
+# Display map 
+
+m = folium.Map(location=[1000, 0], zoom_start=1.5)
+m.save('map2.html')
+
+# put data on map 
+
+state_geo =('C:/Users/Saleh/Week5-Visualization/world-countries.json')
+state_geo
+
+
+m = folium.Map(location=[1000, 0], zoom_start=1.5)
+
+m.choropleth(
+    geo_data=state_geo,
+    name='choropleth',
+    data=plot_data,
+    columns=['CountryCode', 'Value'],
+    key_on='feature.id',
+    fill_color='YlGnBu',
+    fill_opacity=0.7,
+    line_opacity=0.2,
+    legend_name=stage['IndicatorName'].iloc[0]
+)
+
+
+folium.LayerControl().add_to(m)
+
+m.save('map3.html')
+
+
+################
+# Machine Learning(dession tree classsiier)
+################
+
+import pandas as pd
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+
+# Creating a Pandas DataFrame from a CSV file
+
+data = pd.read_csv('./weather/daily_weather.csv')
+data.columns
+# to see all null values
+data[data.isnull().any(axis=1)]
+# Data Cleaning Steps
+del data['number']
+before_rows = data.shape[0]
+print(before_rows)
+data = data.dropna()
+after_rows = data.shape[0]
+print(after_rows)
+# How many rows dropped due to cleaning?
+print(before_rows - after_rows)
+# Convert to a Classification Task
+clean_data = data.copy()
+# *1 to convert True to 1 and False to 0
+clean_data['high_humidity_label'] = (clean_data['relative_humidity_3pm'] > 24.99)*1
+print(clean_data['high_humidity_label'])
+# Target is stored in 'yy'. 
+yy=clean_data[['high_humidity_label']].copy()
+clean_data['relative_humidity_3pm'].head()# to compair 
+# expirment
+m= data.columns.tolist()
+m
+del m[9:11]
+m
+
+# Use 9am Sensor Signals as Features to Predict Humidity at 3pm
+
+## two ways 
+# first)
+#morning_features = ['air_pressure_9am','air_temp_9am','avg_wind_direction_9am','avg_wind_speed_9am',
+#        'max_wind_direction_9am','max_wind_speed_9am','rain_accumulation_9am',
+#        'rain_duration_9am']
+#type(morning_features)
+# or 
+# second
+m= data.columns.tolist()
+
+del m[9:11]
+morning_features = m 
+morning_features
+xx = clean_data[morning_features].copy()
+xx.columns
+
+# Perform Test and Train split 
+
+X_train, X_test, y_train, y_test = train_test_split(xx, yy, test_size=0.33, random_state=324)
+#type(X_train)
+#y_train
+#type(X_test)
+#type(y_train)
+#type(y_test)
+#X_train.head()
+#y_train.describe()
+
+# Fit on Train Set
+
+humidity_classifier = DecisionTreeClassifier(max_leaf_nodes=10, random_state=0)
+humidity_classifier.fit(X_train, y_train)
+
+# Predict on Test Set
+predictions = humidity_classifier.predict(X_test)
+print(predictions[:10])
+print(y_test['high_humidity_label'][:10])
+
+# Measure Accuracy of the Classifier 
+
+accuracy_score(y_true = y_test, y_pred = predictions)
+
+################
+# Scaling In scikitLearn
+################
+#1. Min Max Scalar
+x_stand = (x-x.min(axis=0)) / (x.max(axis=0) - x.min(axis=0))  # if we use the defulat argumant which is 0 1
+x_scalaed = s_stand * (max-min) + min  # min and max refere to the input scle that we chose 
+
+#2. Standard Scaler
+(x-x.mean(axis=0)/standard devation  
+
+################
+# Machine Learning(Clustring Analsis)
+################
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+import utils
+import pandas as pd
+import numpy as np
+from itertools import cycle, islice
+import matplotlib.pyplot as plt
+from pandas.plotting import parallel_coordinates
+%matplotlib inline
+
+#Creating a Pandas DataFrame from a CSV file
+data = pd.read_csv('./weather/minute_weather.csv')
+
+# Data Description
+data.shape
+data.head(10)
+
+#Data Sampling
+#ots of rows, so let us sample down by taking every 10th row. 
+sampled_df = data[(data['rowID'] % 10) == 0]
+sampled_df.shape
+sampled_df.head()
+
+#Statistics 
+sampled_df.describe().transpose()
+
+# Cleaning Data
+sampled_df[sampled_df['rain_accumulation'] == 0].shape
+sampled_df[sampled_df['rain_duration'] == 0].shape
+#Drop all the Rows with Empty rain_duration and rain_accumulation 
+del sampled_df['rain_accumulation']
+del sampled_df['rain_duration']
+# to compare after and before data cleaning
+rows_before = sampled_df.shape[0]
+sampled_df = sampled_df.dropna()
+rows_after = sampled_df.shape[0]
+rows_before - rows_after
+# Statistics
+sampled_df.describe().transpose()
+# Select Features of Interest for Clustering 
+features= sampled_df.columns.tolist()
+del features[0:2]
+features
+select_df = sampled_df[features]
+# check columns
+select_df.columns
+# check the new dataframe
+select_df
+
+# Scale the Features using StandardScaler (the output will be Numpy array)
+X = StandardScaler().fit_transform(select_df)
+X
+
+# Use k-Means Clustering
+kmeans = KMeans(n_clusters=12)
+model = kmeans.fit(X)
+print("model\n", model)
+
+# What are the centers of 12 clusters we formed ?
+centers = model.cluster_centers_
+centers
+
+# Plots
+# Function that creates a DataFrame with a column for Cluster Number
+
+def pd_centers(featuresUsed, centers):
+	colNames= list(featuresUsed)
+	colNames.append('prediction')
+	# Zip with a column called 'prediction' (index)
+	Z = [np.append( a,b) for b,a in enumerate(centers)]
+
+	# Convert List that came from Kmeans to pandas data frame for plotting
+	P = pd.DataFrame(Z, columns=colNames)
+	P['prediction'] = P['prediction'].astype(int)
+	return P
+
+# Function that creates Parallel Plots
+def parallel_plot(data):
+	my_colors = list(islice(cycle(['b', 'r', 'g', 'y','c']), None, len(data)))
+	plt.figure(figsize=(15,8)).gca().axes.set_ylim([-3,+3])
+	parallel_coordinates(data, 'prediction', color = my_colors, marker='o')
+
+P = pd_centers(features, centers)
+P	
+
+# the results
+# Dry Days
+parallel_plot(P[P['relative_humidity'] < -0.5])
+
+# Warm Days
+parallel_plot(P[P['air_temp'] > 0.5])
+
+# Cool Days
+parallel_plot(P[(P['relative_humidity'] > 0.5) & (P['air_temp'] < 0.5)])
